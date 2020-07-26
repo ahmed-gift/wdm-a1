@@ -1,0 +1,12 @@
+<!ELEMENT resume(personalDetails, objectives, educationalBackground, academicCareer, professionalExperience, researchInterests, 
+awards, computerSkills, publications, bsProject )>
+<!ELEMENT personalDetails (name, address, contact)>
+<!ELEMENT name (firstName, lastName)>
+<!ELEMENT address (street, city, state, zip)>
+<!ELEMENT contact (phone, email, url)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>

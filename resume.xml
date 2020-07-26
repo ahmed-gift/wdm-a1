@@ -1,0 +1,36 @@
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE resume [
+    <!ELEMENT resume (personalDetails)>
+    <!ELEMENT personalDetails (name,address,contact)>
+    <!ELEMENT name (firstName,lastName)>
+    <!ELEMENT address (street,city,state,zip)>
+    <!ELEMENT contact (phone,email,url)>
+    <!ELEMENT firstName (#PCDATA)>
+    <!ELEMENT lastName (#PCDATA)>
+    <!ELEMENT street (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+    <!ELEMENT state (#PCDATA)>
+    <!ELEMENT zip (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT url (#PCDATA)>
+    ]>
+    <resume>
+    <personalDetails>
+        <name>
+            <firstName>Ahmed</firstName>
+            <lastName>Bashir</lastName>
+        </name>
+        <address>
+            <street>Karam Elahi Road</street>
+            <city>Gujrat</city>
+            <state>Punjab</state>
+            <zip>50700</zip>
+        </address>
+        <contact>
+            <phone>+923316299358</phone>
+            <email>192440026</email>
+            <url>https://www.ahmedbashir.me</url>
+        </contact>
+    </personalDetails>
+    </resume>
