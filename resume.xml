@@ -1,21 +1,93 @@
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE resume [
-    <!ELEMENT resume (personalDetails)>
-    <!ELEMENT personalDetails (name,address,contact)>
-    <!ELEMENT name (firstName,lastName)>
-    <!ELEMENT address (street,city,state,zip)>
-    <!ELEMENT contact (phone,email,url)>
-    <!ELEMENT firstName (#PCDATA)>
-    <!ELEMENT lastName (#PCDATA)>
-    <!ELEMENT street (#PCDATA)>
-    <!ELEMENT city (#PCDATA)>
-    <!ELEMENT state (#PCDATA)>
-    <!ELEMENT zip (#PCDATA)>
-    <!ELEMENT phone (#PCDATA)>
-    <!ELEMENT email (#PCDATA)>
-    <!ELEMENT url (#PCDATA)>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resume [
+      <!ELEMENT resume (personalDetails, objective,educationalBackground, academicCareer, professionalExperience, researchInterests, awards, computerSkills, publications, bsProject )>
+<!--Personal Details-->
+<!ELEMENT personalDetails (name, address, contact)>
+<!ELEMENT name (firstName, lastName)>
+<!ELEMENT address (street, city, state, zip)>
+<!ELEMENT contact (phone, email, url)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+
+<!--Objective-->
+<!ELEMENT objective (heading,statement)>
+<!ELEMENT statement (paragraph)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT paragraph (#PCDATA)>
+
+<!--Educational Background-->
+<!ELEMENT educationalBackground (heading,degrees)>
+<!ELEMENT degrees (degree)+>
+<!ELEMENT degree (title, tenure,institute, score)>
+<!ELEMENT tenure (startingYear, endingYear)>
+<!ELEMENT score (cgpa | grade)+>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT startingYear (#PCDATA)>
+<!ELEMENT endingYear (#PCDATA)>
+<!ELEMENT institute (#PCDATA)>
+<!ELEMENT cgpa (#PCDATA)>
+<!ELEMENT grade (#PCDATA)>
+
+<!--Academic Career-->
+<!ELEMENT academicCareer (heading, job)>
+<!ELEMENT job (title, institute, joiningDate, (endingDate | currentStatus))*>
+<!ELEMENT joiningDate (#PCDATA)>
+<!ELEMENT endingDate (#PCDATA)>
+<!ELEMENT currentStatus (#PCDATA)>
+
+<!--Professional Experience-->
+<!ELEMENT professionalExperience (heading,projects)>
+<!ELEMENT projects (project)*>
+<!ELEMENT project (projectTitle, projectYear, projectDescription)>
+<!ELEMENT projectTitle (#PCDATA)>
+<!ELEMENT projectYear (#PCDATA)>
+<!ELEMENT projectDescription (#PCDATA)>
+
+<!--Research Interests-->
+<!ELEMENT researchInterests (heading,researchInterest+)>
+<!ELEMENT researchInterest (paragraph)>
+
+
+<!--Awards-->
+<!ELEMENT awards (heading, award+)>
+<!ELEMENT award (awardTitle, awardDescription)>
+<!ELEMENT awardTitle (#PCDATA)>
+<!ELEMENT awardDescription (#PCDATA)>
+
+<!--Computer Skills -->
+<!ELEMENT computerSkills (heading, computerSkill+)>
+<!ELEMENT computerSkill (programmingLanguages | xmlTechnologies | dbms | others)*>
+<!ELEMENT programmingLanguages (heading, programmingLanguage*)>
+<!ELEMENT xmlTechnologies (heading,xmlTechnology*)>
+<!ELEMENT programmingLanguage (#PCDATA)>
+<!ELEMENT xmlTechnology (#PCDATA)>
+<!ELEMENT dbms (heading,db*)>
+<!ELEMENT db (#PCDATA)>
+<!ELEMENT others (otherCsSkill)*>
+<!ELEMENT otherCsSkill (#PCDATA)>
+
+<!--Publications-->
+<!ELEMENT publications (heading,publication*)>
+<!ELEMENT publication (year, title, authors)>
+<!ELEMENT authors (author)+>
+<!ELEMENT author (authorName, authorMail)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT authorName (#PCDATA)>
+<!ELEMENT authorMail (#PCDATA)>
+
+<!--BS Project-->
+<!ELEMENT bsProject (heading, title, description)>
+<!ELEMENT description (#PCDATA)>
+
     ]>
-    <resume>
+<resume>
     <personalDetails>
         <name>
             <firstName>Ahmed</firstName>
@@ -33,4 +105,361 @@
             <url>https://www.ahmedbashir.me</url>
         </contact>
     </personalDetails>
-    </resume>
+
+    <objective>
+        <heading>
+            Objective
+        </heading>
+        <statement>
+            <paragraph>
+                Seeking for a Software Developer position in a fast growing organization to utilize expertise in software development and testing, as well as deployment and support using agile development methodologies. Coming with well honed skills in computer science in addition to excellent communication skills.
+            </paragraph>
+        </statement>
+    </objective>
+
+    <educationalBackground>
+        <heading>Educational Background</heading>
+        <degrees>
+            <degree>
+                <title> 
+                    MS Computer Science
+                </title>
+                <tenure>
+                    <startingYear>
+                            2019
+                    </startingYear>
+                    <endingYear>
+                            2021
+                    </endingYear>
+                </tenure>
+                <institute>
+                        GIFT University, Gujranwala
+                </institute>
+                <score>
+                    <cgpa>
+                            3.7
+                    </cgpa>
+                </score>
+            </degree>
+
+            <degree>
+                <title> 
+                    BS(HONS) Computer Science
+                </title>
+                <tenure>
+                    <startingYear>
+                            2014
+                    </startingYear>
+                    <endingYear>
+                            2018
+                    </endingYear>
+                </tenure>
+                <institute>
+                        GIFT University, Gujranwala
+                </institute>
+                <score>
+                    <cgpa>
+                            3.84
+                    </cgpa>
+                </score>
+            </degree>
+
+            <degree>
+                <title> 
+                        ICS (Intermediate in Computer Science)
+                </title>
+                <tenure>
+                    <startingYear>
+                            2011
+                    </startingYear>
+                    <endingYear>
+                            2013
+                    </endingYear>
+                </tenure>
+                <institute>
+                        Superior College , Gujrat
+                </institute>
+                <score>
+                    <grade>
+                            A+
+                    </grade>
+                </score>
+            </degree>
+
+            <degree>
+                <title> 
+                        Matriculation (Computer Science)
+                </title>
+                <tenure>
+                    <startingYear>
+                            2009
+                    </startingYear>
+                    <endingYear>
+                            2011
+                    </endingYear>
+                </tenure>
+                <institute>
+                        Jinnah Public School  , Gujrat
+                </institute>
+                <score>
+                    <grade>
+                            A+
+                    </grade>
+                </score>
+            </degree>
+        </degrees>
+    </educationalBackground>
+
+    <academicCareer>
+        <heading>
+                Academic Career
+        </heading>
+        <job>
+            <title>
+                    Instructor
+            </title>
+            <institute>
+                    GIFT University
+            </institute>
+            <joiningDate>
+                    September, 2018
+            </joiningDate>
+            <currentStatus>
+                    Currently work here
+            </currentStatus>
+        </job>
+    </academicCareer>
+
+    <professionalExperience>
+        <heading>
+                Professional Experience
+        </heading>
+        <projects>
+            <project>
+                <projectTitle>
+                Coach Bus Hire UK - Coach Hiring Web Portal with Scheduling
+                </projectTitle>
+                <projectYear>
+                2018
+                </projectYear>
+                <projectDescription>
+                Coach Bus Hire is a UK Based Tourism Company. A system was developed for them so that tourists coming from different countries can avail the services of Coach Bus Hire by using their web based platform.
+                </projectDescription>
+            </project>
+            <project>
+                <projectTitle>
+                aHome - Infrastructure as a Service 
+                </projectTitle>
+                <projectYear>
+                2019
+                </projectYear>
+                <projectDescription>
+                aHome is a Infrastructure as a Service based in Africa.
+                </projectDescription>
+            </project>
+            <project>
+                <projectTitle>
+                Virol-Oxy - The Most Effective Disinfectant 
+                </projectTitle>
+                <projectYear>
+                2020
+                </projectYear>
+                <projectDescription>
+                Viroloxy - a Germany based product required a informational website for their newly launched product named Viroloxy. Can be accessed at: virol-oxy.com
+                </projectDescription>
+            </project>
+        </projects>
+    </professionalExperience>
+
+    <researchInterests>
+        <heading>
+                Research Interests
+        </heading>
+
+        <researchInterest>
+            <paragraph>
+                    Web Archiving | Web Crawling | Web Information Retrival
+            </paragraph>
+        </researchInterest>
+
+        <researchInterest>
+            <paragraph>
+                    Adaptive Web Based Systems
+            </paragraph>
+        </researchInterest>
+
+
+        <researchInterest>
+            <paragraph>
+                    Educational Technologies
+            </paragraph>
+        </researchInterest>
+    </researchInterests>
+
+    <awards>
+        <heading>
+                Awards  
+        </heading>
+
+        <award>
+            <awardTitle>
+            Arfa Karim Randhwa Gold Medalist - 2009
+            </awardTitle>
+            <awardDescription>
+            Received Arfa Karim Randhwa Gold Medalist award based on the performance in Matriculation
+            </awardDescription>
+        </award>
+        <award>
+            <awardTitle>
+            Dr. Ch. Abdul Rehman's Scholarship (Superior College) - 2011
+            </awardTitle>
+            <awardDescription>
+            Received scholarship (100% Fee Waived off) during Intermediate based on high achivement in matriculation
+            </awardDescription>
+        </award>
+        <award>
+            <awardTitle>
+            IJT (Islami Jamiat e Talba) Gujrat - High Achiever Award (2013)
+            </awardTitle>
+            <awardDescription>
+            Received high achiever award from IJT based on intermediate performance in the division
+            </awardDescription>
+        </award>
+        <award>
+            <awardTitle>
+            Quaid e Azam Scholarship - GIFT University (2014 - 2018)
+            </awardTitle>
+            <awardDescription>
+            Received Quiad e Azam Scholarship based on intermediate performance.
+            </awardDescription>
+        </award>
+
+    </awards>
+
+    <computerSkills>
+        <heading>
+                Computer Skills
+        </heading>
+
+        <computerSkill>
+            <programmingLanguages>
+                <heading>
+                        Programming Languages
+                </heading>
+                <programmingLanguage>
+                        C++
+                </programmingLanguage>
+                <programmingLanguage>
+                        Java
+                </programmingLanguage>
+                <programmingLanguage>
+                        Python
+                </programmingLanguage>
+                <programmingLanguage>
+                        JavaScript
+                </programmingLanguage>
+                <programmingLanguage>
+                        PHP
+                </programmingLanguage>
+            </programmingLanguages>
+        </computerSkill>
+
+        <computerSkill>
+            <xmlTechnologies>
+                <heading>
+                        XML Technologies
+                </heading>
+                <xmlTechnology>
+                        XML
+                </xmlTechnology>
+                <xmlTechnology>
+                        XSLT
+                </xmlTechnology>
+                <xmlTechnology>
+                        XHTML
+                </xmlTechnology>
+                <xmlTechnology>
+                        XPATH
+                </xmlTechnology>
+                <xmlTechnology>
+                        XQUERY
+                </xmlTechnology>
+            </xmlTechnologies>
+        </computerSkill>
+
+        <computerSkill>
+            <dbms>
+                <heading>
+                        DBMS
+                </heading>
+                <db>
+                        MYSQL
+                </db>
+                <db>
+                        SQLite
+                </db>
+                <db>
+                        Amazon RDS
+                </db>
+            </dbms>
+        </computerSkill>
+        <computerSkill>
+            <others>
+                <otherCsSkill>
+                        Continuous Integration / Continuous Deployment
+                </otherCsSkill>
+                <otherCsSkill>
+                        Virtualization
+                </otherCsSkill>
+                <otherCsSkill>
+                        VCS
+                </otherCsSkill>
+            </others>
+        </computerSkill>
+    </computerSkills>
+    <publications>
+        <heading>
+                Publications
+        </heading>
+        <publication>
+            <year>
+                    2000
+            </year>
+            <title>
+                    Adaptive Web Crawling using Reinforcement Learning
+            </title>
+            <authors>
+                <author>
+                    <authorName>
+                            M.Faheem
+                    </authorName>
+                    <authorMail>
+                            mfaheem@gift.edu.pk
+                    </authorMail>
+                </author>
+                <author>
+                    <authorName>
+                            Ahmed Bashir
+                    </authorName>
+                    <authorMail>
+                            ahmed.bashir@gift.edu.pk
+                    </authorMail>
+                </author>
+            </authors>
+
+        </publication>
+    </publications>
+
+    <bsProject>
+        <heading>
+               BS Project
+        </heading>
+        <title>
+                 Domain Independent Adaptive Intelligent Tutoring System
+        </title>
+        <description>
+                A domain independent tutoring system to facilitate the learning process of the students by visual guidance and presentations of contents according to their learning style determined by trained algorithm
+        </description>
+    </bsProject>
+
+</resume>
