@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+
+    <xs:element name="resume">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="personalDetails" type="personalDetailsType"/>
+                <xs:element name="objective" type="objectiveType"/>
+                <xs:element name="educationalBackground" type="educationalBackgroundType"/>
+                <xs:element name="academicCareer" type="academicCareerType"/>
+                <xs:element name="professionalExperience" type="professionalExperienceType"/>
+                <xs:element name="researchInterests" type="researchInterestsType"/>
+                <xs:element name="awards" type="awardsType"/>
+                <xs:element name="computerSkills" type="computerSkillsType"/>
+                <xs:element name="publications" type="publicationsType"/>
+                <xs:element name="bsProject" type="bsProjectType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name = "nameType">
+        <xs:sequence>
+            <xs:element name="firstName" type = "xs:string"/>
+            <xs:element name="lastName" type = "xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name = "addressType">
+        <xs:sequence>
+            <xs:element name="street" type = "xs:string"/>
+            <xs:element name="city" type = "xs:string"/>
+            <xs:element name="state" type = "xs:string"/>
+            <xs:element name="zip" type = "xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name = "contactType">
+        <xs:sequence>
+            <xs:element name="phone" type = "xs:string"/>
+            <xs:element name="email" type = "xs:string"/>
+            <xs:element name="url" type = "xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name = "personalDetailsType">
+        <xs:sequence>
+            <xs:element name = "name" type = "nameType" />
+            <xs:element name = "address" type = "addressType" />
+            <xs:element name = "contact" type = "contactType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name = "heading" type = "xs:string"/>
+    <xs:element name = "paragraph" type = "xs:string"/>
+    <xs:element name = "title" type = "xs:string"/>
+
+    <xs:complexType name = "statementType">
+        <xs:sequence>
+            <xs:element ref ="paragraph"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name = "objectiveType">
+        <xs:sequence>
+            <xs:element ref = "heading"/>
+            <xs:element name = "statement" type = "statementType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="startingYear" type="xs:gYear"/>
+    <xs:element name="endingYear" type="xs:gYear"/>
+    <xs:element name="institute" type="xs:string"/>
+    <xs:element name="cgpa" type="xs:double"/>
+    <xs:element name="grade" type="xs:string"/>
+
+    <xs:complexType name="tenureType">
+        <xs:sequence>
+            <xs:element ref="startingYear"/>
+            <xs:element ref="endingYear"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="degreeType">
+        <xs:sequence>
+            <xs:element ref="title"/>
+            <xs:element name = "tenure" type = "tenureType"/>
+            <xs:element ref = "institute"/>
+            <xs:element name = "score">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:choice>
+                            <xs:element name="cgpa" type="xs:double" minOccurs="0" maxOccurs="1" />
+                            <xs:element name="grade" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name = "degreesType">
+        <xs:sequence>
+            <xs:element name = "degree" type = "degreeType" minOccurs = "0" maxOccurs = "10" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name = "educationalBackgroundType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element name = "degrees" type = "degreesType" minOccurs = "0" maxOccurs = "1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="joiningDate" type="xs:string"/>
+    <xs:element name="endingDate" type="xs:string"/>
+    <xs:element name="currentStatus" type="xs:string"/>
+    <xs:complexType name="jobType">
+        <xs:sequence>
+            <xs:element ref="title"/>
+            <xs:element ref="institute"/>
+            <xs:element ref="joiningDate"/>
+            <xs:choice>
+                <xs:element name="endingDate" type="xs:string" minOccurs="0" maxOccurs="1" />
+                <xs:element name="currentStatus" type="xs:string" minOccurs="0" maxOccurs="1" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="academicCareerType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element name="job" type="jobType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name = "projectTitle" type = "xs:string"/>
+    <xs:element name = "projectYear" type = "xs:string"/>
+    <xs:element name = "projectDescription" type = "xs:string"/>
+
+    <xs:complexType name="projectType">
+        <xs:sequence>
+            <xs:element ref="projectTitle"/>
+            <xs:element ref="projectYear"/>
+            <xs:element ref="projectDescription"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="projectsType">
+        <xs:sequence>
+            <xs:element name = "project" type = "projectType" minOccurs='0' maxOccurs='unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="professionalExperienceType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element name="projects" type="projectsType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="researchInterest">
+        <xs:sequence>
+            <xs:element ref="paragraph"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="researchInterestsType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element name="researchInterest" type="researchInterest" minOccurs='1' maxOccurs='unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name = "awardTitle" type="xs:string"/>
+    <xs:element name = "awardDescription" type="xs:string"/>
+
+    <xs:complexType name="awardType">
+        <xs:sequence>
+            <xs:element ref="awardTitle"/>
+            <xs:element ref="awardDescription"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="awardsType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element name = "award" type="awardType" minOccurs='0' maxOccurs='unbounded' />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element type="xs:string" name="programmingLanguage"/>
+    <xs:element type="xs:string" name="xmlTechnology"/>
+    <xs:element type="xs:string" name="db"/>
+    <xs:element type="xs:string" name="otherCsSkill"/>
+
+    <xs:complexType name="dbmsType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element ref="db" minOccurs='0' maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="xmlTechnologiesType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element ref="xmlTechnology" minOccurs='0' maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="programmingLanguagesType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element ref="programmingLanguage" minOccurs='0' maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="otherCsSkillType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element ref="otherCsSkill" minOccurs='0' maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="computerSkillType">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="programmingLanguages" type="programmingLanguagesType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="xmlTechnologies" type="xmlTechnologiesType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="dbms" type="dbmsType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="others" type="otherCsSkillType" minOccurs="0" maxOccurs="1" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="computerSkillsType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element name="computerSkill" type="computerSkillType" minOccurs='0' maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="year" type="xs:gYear"/>
+    <xs:element name="authorName" type="xs:string"/>
+    <xs:element name="authorMail" type="xs:string"/>
+
+    <xs:complexType name="authorType">
+        <xs:sequence>
+            <xs:element ref="authorName"/>
+            <xs:element ref="authorMail"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="authorsType">
+        <xs:sequence>
+            <xs:element name="author" type = "authorType" minOccurs = '0' maxOccurs='unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="publicationType">
+        <xs:sequence>
+            <xs:element ref="year"/>
+            <xs:element ref="title"/>
+            <xs:element name="authors" type="authorsType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+     <xs:complexType name="publicationsType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element name="publication" type="publicationType" minOccurs='0' maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="description" type="xs:string"/>
+
+    <xs:complexType name="bsProjectType">
+        <xs:sequence>
+            <xs:element ref="heading"/>
+            <xs:element ref="title"/>
+            <xs:element ref="description"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

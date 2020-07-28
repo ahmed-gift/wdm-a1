@@ -70,7 +70,7 @@
 <!ELEMENT xmlTechnology (#PCDATA)>
 <!ELEMENT dbms (heading,db*)>
 <!ELEMENT db (#PCDATA)>
-<!ELEMENT others (otherCsSkill)*>
+<!ELEMENT others (heading,otherCsSkill*)>
 <!ELEMENT otherCsSkill (#PCDATA)>
 
 <!--Publications-->
@@ -85,6 +85,9 @@
 <!--BS Project-->
 <!ELEMENT bsProject (heading, title, description)>
 <!ELEMENT description (#PCDATA)>
+
+<!ATTLIST phone type CDATA #IMPLIED>
+<!ATTLIST joiningDate format CDATA #IMPLIED>
 
     ]>
 <resume>
@@ -405,6 +408,9 @@
         </computerSkill>
         <computerSkill>
             <others>
+                <heading>
+                    Other Skills
+                </heading>
                 <otherCsSkill>
                         Continuous Integration / Continuous Deployment
                 </otherCsSkill>

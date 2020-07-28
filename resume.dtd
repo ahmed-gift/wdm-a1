@@ -1,5 +1,5 @@
-  <!ELEMENT resume (personalDetails, objective,educationalBackground, professionalExperience, researchInterests, awards, computerSkills, publications, bsProject )>
-   <!--Personal Details-->
+      <!ELEMENT resume (personalDetails, objective,educationalBackground, academicCareer, professionalExperience, researchInterests, awards, computerSkills, publications, bsProject )>
+<!--Personal Details-->
 <!ELEMENT personalDetails (name, address, contact)>
 <!ELEMENT name (firstName, lastName)>
 <!ELEMENT address (street, city, state, zip)>
@@ -22,11 +22,10 @@
 
 <!--Educational Background-->
 <!ELEMENT educationalBackground (heading,degrees)>
-<!ELEMENT degrees (degree)+)
+<!ELEMENT degrees (degree)+>
 <!ELEMENT degree (title, tenure,institute, score)>
 <!ELEMENT tenure (startingYear, endingYear)>
-<!ELEMENT score (cgpa | grade)+)
-<!ELEMENT heading (#PCDATA)>
+<!ELEMENT score (cgpa | grade)+>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT startingYear (#PCDATA)>
 <!ELEMENT endingYear (#PCDATA)>
@@ -45,7 +44,6 @@
 <!ELEMENT professionalExperience (heading,projects)>
 <!ELEMENT projects (project)*>
 <!ELEMENT project (projectTitle, projectYear, projectDescription)>
-<!ELEMENT heading (#PCDATA)>
 <!ELEMENT projectTitle (#PCDATA)>
 <!ELEMENT projectYear (#PCDATA)>
 <!ELEMENT projectDescription (#PCDATA)>
@@ -53,13 +51,11 @@
 <!--Research Interests-->
 <!ELEMENT researchInterests (heading,researchInterest+)>
 <!ELEMENT researchInterest (paragraph)>
-<!ELEMENT paragraph (#PCDATA)>
-<!ELEMENT heading (#PCDATA)>
+
 
 <!--Awards-->
 <!ELEMENT awards (heading, award+)>
 <!ELEMENT award (awardTitle, awardDescription)>
-<!ELEMENT heading (#PCDATA)>
 <!ELEMENT awardTitle (#PCDATA)>
 <!ELEMENT awardDescription (#PCDATA)>
 
@@ -67,12 +63,12 @@
 <!ELEMENT computerSkills (heading, computerSkill+)>
 <!ELEMENT computerSkill (programmingLanguages | xmlTechnologies | dbms | others)*>
 <!ELEMENT programmingLanguages (heading, programmingLanguage*)>
-<!ELEMENT xmlTechnologies (heading,xmlTechnology*)
+<!ELEMENT xmlTechnologies (heading,xmlTechnology*)>
 <!ELEMENT programmingLanguage (#PCDATA)>
 <!ELEMENT xmlTechnology (#PCDATA)>
 <!ELEMENT dbms (heading,db*)>
 <!ELEMENT db (#PCDATA)>
-<!ELEMENT others (otherCsSkill)*>
+<!ELEMENT others (heading,otherCsSkill*)>
 <!ELEMENT otherCsSkill (#PCDATA)>
 
 <!--Publications-->
@@ -80,13 +76,13 @@
 <!ELEMENT publication (year, title, authors)>
 <!ELEMENT authors (author)+>
 <!ELEMENT author (authorName, authorMail)>
-<!ELEMENT heading (#PCDATA)>
 <!ELEMENT year (#PCDATA)>
-<!ELEMENT title (#PCDATA)>
 <!ELEMENT authorName (#PCDATA)>
 <!ELEMENT authorMail (#PCDATA)>
 
 <!--BS Project-->
 <!ELEMENT bsProject (heading, title, description)>
-<!ELEMENT title (#PCDATA)>
 <!ELEMENT description (#PCDATA)>
+
+<!ATTLIST phone type CDATA #IMPLIED>
+<!ATTLIST joiningDate format CDATA #IMPLIED>
