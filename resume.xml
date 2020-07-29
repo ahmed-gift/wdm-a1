@@ -1,95 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE resume [
-      <!ELEMENT resume (personalDetails, objective,educationalBackground, academicCareer, professionalExperience, researchInterests, awards, computerSkills, publications, bsProject )>
-<!--Personal Details-->
-<!ELEMENT personalDetails (name, address, contact)>
-<!ELEMENT name (firstName, lastName)>
-<!ELEMENT address (street, city, state, zip)>
-<!ELEMENT contact (phone, email, url)>
-<!ELEMENT firstName (#PCDATA)>
-<!ELEMENT lastName (#PCDATA)>
-<!ELEMENT street (#PCDATA)>
-<!ELEMENT city (#PCDATA)>
-<!ELEMENT state (#PCDATA)>
-<!ELEMENT zip (#PCDATA)>
-<!ELEMENT phone (#PCDATA)>
-<!ELEMENT email (#PCDATA)>
-<!ELEMENT url (#PCDATA)>
-
-<!--Objective-->
-<!ELEMENT objective (heading,statement)>
-<!ELEMENT statement (paragraph)>
-<!ELEMENT heading (#PCDATA)>
-<!ELEMENT paragraph (#PCDATA)>
-
-<!--Educational Background-->
-<!ELEMENT educationalBackground (heading,degrees)>
-<!ELEMENT degrees (degree)+>
-<!ELEMENT degree (title, tenure,institute, score)>
-<!ELEMENT tenure (startingYear, endingYear)>
-<!ELEMENT score (cgpa | grade)+>
-<!ELEMENT title (#PCDATA)>
-<!ELEMENT startingYear (#PCDATA)>
-<!ELEMENT endingYear (#PCDATA)>
-<!ELEMENT institute (#PCDATA)>
-<!ELEMENT cgpa (#PCDATA)>
-<!ELEMENT grade (#PCDATA)>
-
-<!--Academic Career-->
-<!ELEMENT academicCareer (heading, job)>
-<!ELEMENT job (title, institute, joiningDate, (endingDate | currentStatus))*>
-<!ELEMENT joiningDate (#PCDATA)>
-<!ELEMENT endingDate (#PCDATA)>
-<!ELEMENT currentStatus (#PCDATA)>
-
-<!--Professional Experience-->
-<!ELEMENT professionalExperience (heading,projects)>
-<!ELEMENT projects (project)*>
-<!ELEMENT project (projectTitle, projectYear, projectDescription)>
-<!ELEMENT projectTitle (#PCDATA)>
-<!ELEMENT projectYear (#PCDATA)>
-<!ELEMENT projectDescription (#PCDATA)>
-
-<!--Research Interests-->
-<!ELEMENT researchInterests (heading,researchInterest+)>
-<!ELEMENT researchInterest (paragraph)>
-
-
-<!--Awards-->
-<!ELEMENT awards (heading, award+)>
-<!ELEMENT award (awardTitle, awardDescription)>
-<!ELEMENT awardTitle (#PCDATA)>
-<!ELEMENT awardDescription (#PCDATA)>
-
-<!--Computer Skills -->
-<!ELEMENT computerSkills (heading, computerSkill+)>
-<!ELEMENT computerSkill (programmingLanguages | xmlTechnologies | dbms | others)*>
-<!ELEMENT programmingLanguages (heading, programmingLanguage*)>
-<!ELEMENT xmlTechnologies (heading,xmlTechnology*)>
-<!ELEMENT programmingLanguage (#PCDATA)>
-<!ELEMENT xmlTechnology (#PCDATA)>
-<!ELEMENT dbms (heading,db*)>
-<!ELEMENT db (#PCDATA)>
-<!ELEMENT others (heading,otherCsSkill*)>
-<!ELEMENT otherCsSkill (#PCDATA)>
-
-<!--Publications-->
-<!ELEMENT publications (heading,publication*)>
-<!ELEMENT publication (year, title, authors)>
-<!ELEMENT authors (author)+>
-<!ELEMENT author (authorName, authorMail)>
-<!ELEMENT year (#PCDATA)>
-<!ELEMENT authorName (#PCDATA)>
-<!ELEMENT authorMail (#PCDATA)>
-
-<!--BS Project-->
-<!ELEMENT bsProject (heading, title, description)>
-<!ELEMENT description (#PCDATA)>
-
-<!ATTLIST phone type CDATA #IMPLIED>
-<!ATTLIST joiningDate format CDATA #IMPLIED>
-
-    ]>
+<!--<!DOCTYPE resume SYSTEM "resume.dtd">-->
 <resume>
     <personalDetails>
         <name>
@@ -207,7 +117,7 @@
                 <score>
                     <grade>
                             A+
-                    </grade>
+                    </grade> 
                 </score>
             </degree>
         </degrees>

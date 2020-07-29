@@ -25,7 +25,7 @@
 <!ELEMENT degrees (degree)+>
 <!ELEMENT degree (title, tenure,institute, score)>
 <!ELEMENT tenure (startingYear, endingYear)>
-<!ELEMENT score (cgpa | grade)+>
+<!ELEMENT score (cgpa | grade)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT startingYear (#PCDATA)>
 <!ELEMENT endingYear (#PCDATA)>
@@ -35,14 +35,14 @@
 
 <!--Academic Career-->
 <!ELEMENT academicCareer (heading, job)>
-<!ELEMENT job (title, institute, joiningDate, (endingDate | currentStatus))*>
+<!ELEMENT job (title, institute, joiningDate, (endingDate | currentStatus))+>
 <!ELEMENT joiningDate (#PCDATA)>
 <!ELEMENT endingDate (#PCDATA)>
 <!ELEMENT currentStatus (#PCDATA)>
 
 <!--Professional Experience-->
 <!ELEMENT professionalExperience (heading,projects)>
-<!ELEMENT projects (project)*>
+<!ELEMENT projects (project)+>
 <!ELEMENT project (projectTitle, projectYear, projectDescription)>
 <!ELEMENT projectTitle (#PCDATA)>
 <!ELEMENT projectYear (#PCDATA)>
@@ -84,5 +84,3 @@
 <!ELEMENT bsProject (heading, title, description)>
 <!ELEMENT description (#PCDATA)>
 
-<!ATTLIST phone type CDATA #IMPLIED>
-<!ATTLIST joiningDate format CDATA #IMPLIED>
